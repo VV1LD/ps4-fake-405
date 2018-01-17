@@ -19,7 +19,7 @@ SECTIONS
 	. = 0;
   .payload_header : { *(.payload_header) } : header_seg
 	.payload_code : { *(.payload_code) } : code_seg
-	.payload_data : { *(.payload_rdata .rdata) } : rdata_seg
+	.payload_data : { *(.payload_rdata .rdata .rodata.*) } : rdata_seg
 	.payload_data : { *(.payload_data) } : data_seg
 	. = 0x100000;
 	.data : { *(.data) } : bad_data_seg
